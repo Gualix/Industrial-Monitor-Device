@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Industrial Monitor Device</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>TITANIO Company</h1>
+            <h2>Industrial Monitor Device</h2>
+            <p class="subtitle">Real-time monitoring of pressure, temperature & runtime</p>
+        </header>
+
+        <main>
+            <div class="card">
+                <h3>Pressure</h3>
+                <p id="pressure" class="value">--.- PSI</p>
+            </div>
+
+            <div class="card">
+                <h3>Temperature</h3>
+                <p id="temperature" class="value">--.- °C</p>
+            </div>
+
+            <div class="card">
+                <h3>Hour meter</h3>
+                <p id="hours" class="value">0.0 h</p>
+            </div>
+
+            <div class="card status-card" id="status-card">
+                <h3>Status</h3>
+                <p id="status" class="status-text">WAITING...</p>
+                <p id="timestamp" class="timestamp">--:--:--</p>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        async function fetchStatus() {
+            try {
+                const response = await fetch("/api/status");
+                const data = await response.json();
+
+                const pElem = document.getElementById("pressure");
+                const tElem = document.getElementById("temperature");
+                const hElem = document.getElementById("hours");
+                const sElem = document.getElementById("status");
+                const tsElem = document.getElementById("timestamp");
+                const sCard = document.getElementById("status-card");
+
+                pElem.textContent = data.pressure_psi.toFixed(1) + " PSI";
+                tElem.textContent = data.temperature_c.toFixed(1) + " °C";
+                hElem.textContent = data.hours_on.toFixed(2) + " h";
+                sElem.textContent = data.state;
+                tsElem.textContent = data.timestamp;
+
+                // Colores según estado
+                if (data.state === "OK") {
+                    sCard.classList.remove("alert");
+                    sCard.classList.add("ok");
+                } else {
+                    sCard.classList.remove("ok");
+                    sCard.classList.add("alert");
+                }
+
+            } catch (err) {
+                console.error("Error fetching status:", err);
+            }
+        }
+
+        // Actualizar cada 1 segundo
+        setInterval(fetchStatus, 1000);
+        // Primera llamada
+        fetchStatus();
+    </script>
+</body>
+</html>

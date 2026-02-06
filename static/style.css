@@ -1,0 +1,90 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #050608;
+    color: #f0f0f0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 26px;
+    color: #ffd700; /* amarillo TITANIO Company */
+}
+
+header h2 {
+    margin: 2px 0 4px 0;
+    font-size: 18px;
+    color: #00c4ff;
+}
+
+.subtitle {
+    margin: 0;
+    font-size: 12px;
+    color: #bbbbbb;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 8px;
+    width: 100%;
+    max-width: 460px;
+}
+
+.card {
+    background: #141820;
+    border-radius: 8px;
+    padding: 8px;
+    text-align: center;
+    box-shadow: 0 0 8px rgba(0,0,0,0.6);
+}
+
+.card h3 {
+    margin: 0 0 6px 0;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #aaaaaa;
+}
+
+.value {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.status-card {
+    grid-column: span 2;
+}
+
+.status-text {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 4px 0;
+}
+
+.timestamp {
+    font-size: 12px;
+    color: #888888;
+}
+
+.status-card.ok {
+    border: 2px solid #0fbf4b;
+}
+
+.status-card.alert {
+    border: 2px solid #ff3333;
+}
