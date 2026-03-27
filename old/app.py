@@ -1,6 +1,6 @@
 # app.py
 from flask import Flask, render_template, jsonify
-from sensors import get_status
+from old.sensors import get_status
 
 app = Flask(__name__)
 
