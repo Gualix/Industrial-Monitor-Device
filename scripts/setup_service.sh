@@ -14,7 +14,7 @@ WorkingDirectory=$PROJECT_ROOT/backend
 ExecStart=$PROJECT_ROOT/backend/.venv/bin/python $PROJECT_ROOT/backend/run.py
 Restart=always
 RestartSec=3
-User=pi
+User=titanio
 
 [Install]
 WantedBy=multi-user.target
