@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Industrial Monitor Device</title>
+  <link rel="stylesheet" href="assets/css/variables.css" />
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link rel="stylesheet" href="assets/css/layout.css" />
+  <link rel="stylesheet" href="assets/css/components.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">TITANIO Company</p>
+        <h1>Industrial Monitor Device</h1>
+      </div>
+      <div class="status-pill" id="systemStatus">Loading...</div>
+    </header>
+
+    <nav class="tabs">
+      <button class="tab-button active" data-tab="dashboard">Dashboard</button>
+      <button class="tab-button" data-tab="technical">Technical Summary</button>
+    </nav>
+
+    <main class="content">
+      <section id="dashboard" class="tab-panel active"></section>
+      <section id="technical" class="tab-panel"></section>
+    </main>
+  </div>
+
+  <div id="modalRoot"></div>
+
+  <script type="module" src="assets/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+.status-pill,
+.tab-button,
+.card,
+.keypad-button,
+.action-button {
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.status-pill {
+  padding: 10px 14px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  font-weight: 700;
+}
+
+.tab-button {
+  background: var(--surface);
+  color: var(--text);
+  padding: 14px;
+  border: 1px solid var(--border);
+  font-weight: 700;
+}
+
+.tab-button.active {
+  background: var(--accent);
+  color: #111;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 16px;
+}
+
+.card h2 {
+  font-size: 0.95rem;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+.metric {
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.submetric {
+  margin-top: 8px;
+  color: var(--muted);
+}
+
+.alarm-list {
+  display: grid;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.alarm-item {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.alarm-item.active {
+  border-color: rgba(255, 107, 107, 0.5);
+}
+
+.badge {
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-weight: 700;
+  background: rgba(76, 217, 100, 0.15);
+  color: var(--ok);
+}
+
+.badge.active {
+  background: rgba(255, 107, 107, 0.15);
+  color: var(--danger);
+}
+
+.stack {
+  display: grid;
+  gap: 12px;
+}
+
+.action-button {
+  background: var(--accent);
+  color: #111;
+  padding: 16px;
+  font-weight: 800;
+  width: 100%;
+}
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(8, 12, 18, 0.72);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.modal-panel {
+  width: min(100%, 460px);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 18px;
+  display: grid;
+  gap: 14px;
+  box-shadow: var(--shadow);
+}
+
+.keypad-display {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 14px;
+  min-height: 56px;
+  font-size: 1.8rem;
+  letter-spacing: 6px;
+  text-align: center;
+}
+
+.keypad-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.keypad-button {
+  background: #243142;
+  color: var(--text);
+  padding: 18px 0;
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.keypad-button.action {
+  background: var(--accent);
+  color: #111;
+}
+
+.keypad-button.danger {
+  background: #863737;
+}
+
+.message {
+  color: var(--muted);
+  font-size: 0.95rem;
+}

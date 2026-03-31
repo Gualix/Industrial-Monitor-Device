@@ -1,5 +1,0 @@
-flask
-RPi.GPIO
-w1thermsensor
-adafruit-circuitpython-ads1x15
-adafruit-blinka

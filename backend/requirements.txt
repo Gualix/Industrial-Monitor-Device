@@ -1,0 +1,5 @@
+Flask==3.1.0
+adafruit-blinka==8.57.0
+adafruit-circuitpython-ads1x15==2.2.30
+w1thermsensor==2.3.0
+RPi.GPIO==0.7.1
