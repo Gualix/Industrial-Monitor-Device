@@ -35,7 +35,10 @@ class ADS1115Reader:
                 3: ADS.P3,
             }
             self.analog_in = AnalogIn(ads, channel_map.get(self.channel, ADS.P0))
-        except Exception:
+        except Exception as e:
+            import traceback
+            print("ADS1115 setup error:")
+            traceback.print_exc()
             self.analog_in = None
 
     def read_voltage(self) -> float:
