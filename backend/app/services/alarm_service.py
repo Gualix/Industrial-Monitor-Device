@@ -15,7 +15,7 @@ class AlarmService:
         self.maintenance_interval_hours = maintenance_interval_hours
 
     def evaluate(self, pressure_psi: float, temperature_c: float, hours_since_maintenance: float) -> dict:
-        low_pressure = pressure_psi < self.pressure_low_psi
+        low_pressure = 0.5 < pressure_psi < self.pressure_low_psi
         high_temperature = temperature_c > self.temp_high_c
         maintenance_due = hours_since_maintenance >= self.maintenance_interval_hours
 
